@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>সিনেবক্স — মুভি খুঁজুন ও দেখুন</title>
+<meta name="description" content="ট্রেন্ডিং মুভি ব্রাউজ করুন, পোস্টার-কাস্ট-ট্রেলার দেখুন, আর পাবলিক ডোমেইন ফুল মুভি ফ্রি দেখুন।">
+<meta name="theme-color" content="#0b0d12">
+
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icons/favicon-32.png" sizes="32x32">
+<link rel="icon" href="./icons/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="সিনেবক্স">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand"><img src="./icons/icon-96.png" alt="সিনেবক্স"> সিনে<span>বক্স</span></div>
+  <div class="header-actions">
+    <div class="icon-btn" id="refreshBtn" title="রিফ্রেশ">⟳</div>
+  </div>
+</header>
+
+<div class="install-banner" id="installBanner">
+  <img src="./icons/icon-96.png" alt="">
+  <div class="txt"><b>অ্যাপ হিসেবে ইনস্টল করুন</b>হোম স্ক্রিন থেকে সরাসরি খুলুন, দ্রুত ও পূর্ণ-স্ক্রিন।</div>
+  <button id="installBtn">ইনস্টল</button>
+  <div class="dismiss" id="dismissInstall">✕</div>
+</div>
+
+<!-- ===================== HOME TAB ===================== -->
+<main id="homeTab">
+  <div class="hero">
+    <div class="hero-bg" id="heroBg1"></div>
+    <div class="hero-bg" id="heroBg2"></div>
+    <div class="hero-content">
+      <h1>আজই খুঁজে নিন আপনার পছন্দের সিনেমা</h1>
+      <div class="search-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="text" placeholder="মুভির নাম লিখুন...">
+      </div>
+    </div>
+  </div>
+
+  <div class="chip-row" id="genreChips"></div>
+
+  <div id="searchResults" style="display:none;"></div>
+
+  <div id="mainSections">
+    <div class="section">
+      <div class="section-head"><h2>এই সপ্তাহে জনপ্রিয়</h2><span class="tag">সাপ্তাহিক</span></div>
+      <div class="row" id="rowTrending"></div>
+    </div>
+    <div class="section">
+      <div class="section-head"><h2>সর্বোচ্চ রেটিং</h2><span class="tag">অল টাইম</span></div>
+      <div class="row" id="rowTop"></div>
+    </div>
+    <div class="section">
+      <div class="section-head"><h2>আসছে শীঘ্রই</h2><span class="tag">আপকামিং</span></div>
+      <div class="row" id="rowUpcoming"></div>
+    </div>
+    <div class="section">
+      <div class="section-head"><h2>সম্পূর্ণ ফ্রি মুভি</h2><span class="tag">YouTube • পাবলিক ডোমেইন</span></div>
+      <div class="row" id="rowFree"></div>
+    </div>
+  </div>
+</main>
+
+<!-- ===================== MY LIST TAB ===================== -->
+<main id="listTab" style="display:none;">
+  <div class="page-title">আমার তালিকা</div>
+  <div class="row grid-wrap" id="favGrid" style="padding:14px 18px;"></div>
+</main>
+
+<!-- ===================== DETAIL OVERLAY ===================== -->
+<div class="overlay" id="detailOverlay">
+  <div class="overlay-backdrop" id="detailBackdrop">
+    <div class="close-btn" id="closeDetail">✕</div>
+    <div class="overlay-fav" id="overlayFav">♥</div>
+  </div>
+  <div class="overlay-body">
+    <h2 id="detailTitle">—</h2>
+    <div class="meta-line" id="detailMeta"></div>
+    <p class="overview" id="detailOverview"></p>
+    <div id="castSection">
+      <div class="subhead">অভিনয়ে</div>
+      <div class="cast-row" id="detailCast"></div>
+    </div>
+    <div class="subhead" id="trailerSubhead">ট্রেলার</div>
+    <div id="detailTrailer"></div>
+  </div>
+</div>
+
+<!-- ===================== BOTTOM NAV ===================== -->
+<nav class="bottom-nav">
+  <div class="nav-item active" data-tab="home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+    হোম
+  </div>
+  <div class="nav-item" data-tab="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    সার্চ
+  </div>
+  <div class="nav-item" data-tab="list">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+    তালিকা
+  </div>
+</nav>
+
+<script src="./js/config.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>

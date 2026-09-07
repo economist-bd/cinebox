@@ -1,0 +1,30 @@
+{
+  "name": "সিনেবক্স — মুভি খুঁজুন ও দেখুন",
+  "short_name": "সিনেবক্স",
+  "description": "ট্রেন্ডিং মুভি ব্রাউজ করুন, পোস্টার-কাস্ট-ট্রেলার দেখুন, আর পাবলিক ডোমেইন ফুল মুভি ফ্রি দেখুন।",
+  "id": "/",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "lang": "bn",
+  "dir": "ltr",
+  "categories": ["entertainment", "movies"],
+  "icons": [
+    { "src": "icons/icon-72.png",  "sizes": "72x72",   "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-96.png",  "sizes": "96x96",   "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-128.png", "sizes": "128x128", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-152.png", "sizes": "152x152", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "সার্চ", "short_name": "সার্চ", "url": "./index.html?tab=search" },
+    { "name": "আমার তালিকা", "short_name": "তালিকা", "url": "./index.html?tab=list" }
+  ]
+}
