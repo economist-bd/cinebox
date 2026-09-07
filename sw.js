@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cinebox-v1';
+const CACHE_NAME = 'cinebox-v2';
 const APP_SHELL = [
   './',
   './index.html',
